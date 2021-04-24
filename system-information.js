@@ -11,8 +11,6 @@ class SystemInformation {
         const { main } = await si.cpuTemperature();
         const defaultInterface = await si.networkInterfaceDefault();
 
-        await si.networkStats(defaultInterface);
-        await sleep(500);
         const networks = await si.networkStats(defaultInterface);
 
         const { rx_sec, tx_sec } = networks[0];
